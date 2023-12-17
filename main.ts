@@ -99,10 +99,10 @@ class NeuralNetwork {
 }
 
 const trainingData: Point[] = [
-    { x: -0.5, y: -0.5, label: "blue" },
-    { x: 0.5, y: -0.5, label: "red" },
-    { x: -0.5, y: 0.5, label: "green" },
-    { x: 0.5, y: 0.5, label: "purple" }
+    { x: -0.5, y: -0.5, label: 'blue' },
+    { x: 0.5,  y: -0.5, label: 'red' },
+    { x: -0.5, y: 0.5,  label: 'green' },
+    { x: 0.5,  y: 0.5,  label: 'purple' }
 ];
 
 const train = () => {
@@ -161,9 +161,9 @@ const classifyPoints = () => {
  */
 const encode = (label: string): LabelEncoding => {
     const encoding: Record<string, [number, number, number, number]> = {
-        blue: [1, 0, 0, 0],
-        red: [0, 1, 0, 0],
-        green: [0, 0, 1, 0],
+        blue:   [1, 0, 0, 0],
+        red:    [0, 1, 0, 0],
+        green:  [0, 0, 1, 0],
         purple: [0, 0, 0, 1]
     }
 
