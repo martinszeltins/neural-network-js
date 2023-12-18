@@ -92,6 +92,12 @@ class NeuralNetwork {
             errors[i] = target[i] - output[i]
 
             for (let j = 0; j < this.inputNeuronCount; j++) {
+
+                /**
+                 * Backpropagation Algorithm.
+                 * General Gradient Descent Algorithm
+                 * Δw(ij)​ = η x δ(i) x o(j​)
+                 */
                 this.weights[i][j] += this.learningRate * errors[i] * output[i] * (1 - output[i]) * inputs[j]
             }
         }
@@ -115,8 +121,6 @@ const train = () => {
 
     alert("Training complete");
 }
-
-debugger
 
 const canvas: HTMLCanvasElement = document.getElementById("graph") as HTMLCanvasElement
 const ctx: CanvasRenderingContext2D = canvas.getContext("2d") as CanvasRenderingContext2D

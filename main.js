@@ -79,6 +79,7 @@ const trainingData = [
 ];
 
 const train = () => {
+    debugger;
     for (let i = 0; i < 10000; i++) {
         // Pick a random point from the training data
         const data = trainingData[Math.floor(Math.random() * trainingData.length)];
@@ -89,19 +90,20 @@ const train = () => {
     alert("Training complete");
 };
 
-debugger;
-
 const canvas = document.getElementById("graph");
 const ctx = canvas.getContext("2d");
 const pointRadius = 5;
 
 let neuralNetwork = new NeuralNetwork();
 
+console.log(JSON.stringify(neuralNetwork, null, 2));
+
 const classifyPoints = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     drawAxes();
 
+    debugger;
     neuralNetwork.points = [];
 
     // Generate 100 random points
